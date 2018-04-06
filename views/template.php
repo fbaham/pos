@@ -47,12 +47,23 @@ CUERPO DOCUMENTO
 
   include "modules/header.php";
 
-  include "modules/sidebar_menu.php";
-  // CONTENIDO TEMPORAL
-  include "modules/contenido.php";
+  include "modules/sidebar-menu.php";
+  //CONTENIDO
+  if(isset($_GET["path"])){
+    if($_GET["path"] == "home"||
+       $_GET["path"] == "users"||
+       $_GET["path"] == "categories"||
+       $_GET["path"] == "products"||
+       $_GET["path"] == "clients"||
+       $_GET["path"] == "sales"||
+       $_GET["path"] == "create-sale"||
+       $_GET["path"] == "reports"){
+      include "modules/".$_GET["path"].".php";
+    }
+  }
 
   include "modules/footer.php";
-  
+
   ?>
 
   <!-- =============================================== -->

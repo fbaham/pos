@@ -1,6 +1,6 @@
 <header class="main-header">
   <!-- LOGOTIPO -->
-  <a href="" class="logo">
+  <a href="home" class="logo">
     <!-- logo mini -->
     <span class="logo-mini">
       <img src="views/img/template/icono-blanco.png" class="img-responsive" style="padding:10px">
