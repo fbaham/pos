@@ -9,6 +9,7 @@
   <!--==================
   PLUGINS DE CSS
   ===================-->
+  <link rel="icon" href="views/img/template/icono-negro.png">
   <!-- Bootstrap 3.3.7 -->
   <link rel="stylesheet" href="views/bower_components/bootstrap/dist/css/bootstrap.min.css">
   <!-- Font Awesome -->
@@ -39,37 +40,45 @@
 <!--==================
 CUERPO DOCUMENTO
 ===================-->
-<body class="hold-transition skin-blue sidebar-collapse sidebar-mini">
-<!-- Site wrapper -->
-<div class="wrapper">
+<body class="hold-transition skin-blue sidebar-collapse sidebar-mini login-page">
 
   <?php
+  if(isset($_SESSION["Login"]) && $_SESSION["Login"] == "ok"){
+    // Site wrapper
+    echo "<div class='wrapper'>";
+    include "modules/header.php";
 
-  include "modules/header.php";
-
-  include "modules/sidebar-menu.php";
-  //CONTENIDO
-  if(isset($_GET["path"])){
-    if($_GET["path"] == "home"||
-       $_GET["path"] == "users"||
-       $_GET["path"] == "categories"||
-       $_GET["path"] == "products"||
-       $_GET["path"] == "clients"||
-       $_GET["path"] == "sales"||
-       $_GET["path"] == "create-sale"||
-       $_GET["path"] == "reports"){
-      include "modules/".$_GET["path"].".php";
+    include "modules/sidebar-menu.php";
+    //CONTENIDO
+    if(isset($_GET["path"])){
+      if($_GET["path"] == "home"||
+         $_GET["path"] == "users"||
+         $_GET["path"] == "categories"||
+         $_GET["path"] == "products"||
+         $_GET["path"] == "clients"||
+         $_GET["path"] == "sales"||
+         $_GET["path"] == "create-sale"||
+         $_GET["path"] == "reports"){
+        include "modules/".$_GET["path"].".php";
+      } else {
+        include "modules/404.php";
+      }
+    } else {
+      include "modules/home.php";
     }
+
+    include "modules/footer.php";
+    echo "</div>";
+    // ./wrapper
+  } else {
+    include "modules/login.php";
   }
-
-  include "modules/footer.php";
-
   ?>
 
   <!-- =============================================== -->
 
-</div>
-<!-- ./wrapper -->
+
+
 <script type="text/javascript" src="views/js/template.js"></script>
 </body>
 </html>
