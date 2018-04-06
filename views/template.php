@@ -47,6 +47,12 @@ CUERPO DOCUMENTO
 
   include "modules/header.php";
 
+  include "modules/sidebar_menu.php";
+  // CONTENIDO TEMPORAL
+  include "modules/contenido.php";
+
+  include "modules/footer.php";
+  
   ?>
 
   <!-- =============================================== -->
