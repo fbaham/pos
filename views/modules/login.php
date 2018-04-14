@@ -21,6 +21,10 @@
           <button type="submit" class="btn btn-primary btn-flat">Iniciar sesión</button>
         </div>
       </div>
+      <?php
+        $login = new UserController();
+        $login -> ctr_user_login();
+      ?>
     </form>
   </div>
 </div>

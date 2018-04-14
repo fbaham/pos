@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,7 +24,7 @@
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
   <!-- Estilos propios -->
-  <link rel="stylesheet" href="views\css\styles.css">
+  <link rel="stylesheet" href="views/css/styles.css">
   <!--==================
   PLUGINS DE JAVASCRIPT
   ===================-->
@@ -60,7 +61,8 @@ CUERPO DOCUMENTO
          $_GET["path"] == "clients"||
          $_GET["path"] == "sales"||
          $_GET["path"] == "create-sale"||
-         $_GET["path"] == "reports"){
+         $_GET["path"] == "reports"||
+         $_GET["path"] == "exit"){
         include "modules/".$_GET["path"].".php";
       } else {
         include "modules/404.php";
