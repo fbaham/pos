@@ -157,10 +157,6 @@
           <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
           <button type="submit" class="btn btn-primary">Guardar usuario</button>
         </div>
-        <?php
-          $createUser = new UserController();
-          $createUser -> ctr_create_user();
-        ?>
       </form>
     </div>
 
