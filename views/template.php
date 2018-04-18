@@ -94,5 +94,6 @@ CUERPO DOCUMENTO
 
 
 <script type="text/javascript" src="views/js/template.js"></script>
+<script type="text/javascript" src="views/js/users.js"></script>
 </body>
 </html>

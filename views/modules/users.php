@@ -146,9 +146,9 @@
             <!-- FOTO -->
             <div class="form-group">
               <div class="panel text-uppercase">SUBIR FOTO</div>
-              <input type="file" id="newPhoto" name="newPhoto">
-              <p class="help-block">Peso máximo de la foto 200 MB</p>
-              <img src="views\img\users\default\anonymous.png" alt="" class="img-thumbnail" width="100px">
+              <input type="file" class="newPhoto" name="newPhoto">
+              <p class="help-block">Peso máximo de la foto 2 MB</p>
+              <img src="views\img\users\default\anonymous.png" alt="" class="img-thumbnail preview" width="100px">
             </div>
           </div>
         </div>

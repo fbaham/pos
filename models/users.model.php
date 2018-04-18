@@ -13,11 +13,12 @@ class UsersModel{
   }
 
   static public function mdl_create_user($table, $data){
-    $stmt = Conn::connect()->prepare("INSERT INTO $table (name, user, password, type) VALUES (:name, :user, :pass, :type)");
+    $stmt = Conn::connect()->prepare("INSERT INTO $table (name, user, password, type, photo) VALUES (:name, :user, :pass, :type, :photo)");
     $stmt -> bindParam(":name", $data['name'], PDO::PARAM_STR);
     $stmt -> bindParam(":user", $data['user'], PDO::PARAM_STR);
     $stmt -> bindParam(":pass", $data['pass'], PDO::PARAM_STR);
     $stmt -> bindParam(":type", $data['type'], PDO::PARAM_STR);
+    $stmt -> bindParam(":photo", $data['photo'], PDO::PARAM_STR);
     if ($stmt->execute()) {
       return "ok";
     } else {
